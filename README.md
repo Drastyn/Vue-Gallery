@@ -10,6 +10,7 @@ npm install
     AXIOS,
     NODE SASS,
     BULMA CSS,
+    VUE-FLASH-MESSAGES,
     FONTAWESOME
 )
 
