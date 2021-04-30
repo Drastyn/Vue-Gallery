@@ -16,12 +16,14 @@ const notifications = {
             commit('setNotification', {
                 title: message,
                 contentClass: 'flash-message-text',
+                icon: '/logo.png',
             });
         },
         errorMessage({ commit }, error) {
             commit('setNotification', {
                 title: error,
                 contentClass: 'flash-message-text',
+                icon: '/logo.png',
             });
         },
         cleanNotification({ commit }) {

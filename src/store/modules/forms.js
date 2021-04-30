@@ -15,13 +15,13 @@ const forms = {
         formsValidations({ commit }, entity) {
             let checkError = [];
             if(entity.name.length < 4 || entity.name.length > 30) {
-                checkError.push('El nombre debe ser de 10 a 30 caracteres');
+                checkError.push('Name must be have between 4 to 30 characters');
             }
             if(!/^[A-Za-zñÑáéíóúÁÉÍÓÚ\s]+$/.test(entity.name)) {
-                checkError.push('Nombre no permite caracteres especiales');
+                checkError.push('Name not be have especial characters');
             }
             if(!entity.file) {
-                checkError.push('Recuerde seleccionar su imagen')
+                checkError.push('Remeber select your image')
             }
             commit('setErrors', checkError[checkError.length - 1]);
         },

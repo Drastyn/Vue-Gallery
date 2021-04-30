@@ -6,12 +6,12 @@
             <font-awesome-icon icon='arrow-left'/>
           </span>
           <span>
-            Página anterior
+            Previous page
           </span>
         </a>
         <a v-if="amount === 8" @click="nextPage()" class="pagination-next nav-button page-button">
           <span>
-            Próxima página
+            Next page
           </span>
           <span class="icon ml-2">
             <font-awesome-icon icon='arrow-right'/>

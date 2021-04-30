@@ -10,7 +10,7 @@
         <span class="icon">
             <font-awesome-icon icon='arrow-left'/>
         </span>
-        <span>Volver al indice de imagenes</span>
+        <span>Back to the index of images</span>
       </router-link>
       <FlashMessage :position="'right bottom'"/>
   </div>

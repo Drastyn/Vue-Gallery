@@ -1,7 +1,17 @@
 <template>
-  <div id="images-index" class="mx-4 my-6">
-      <div class="content is-large is-inline-flex ml-1">
-        <h1 class="title is-2">Imagenes</h1>
+  <div id="images-index">
+      <section class="hero is-small is-primary">
+          <div class="hero-body">
+              <div class="title">
+                  Vue Gallery
+              </div>
+              <p class="subtitle">
+                  A Practice Gallery With VueJS + Laravel 8
+              </p>
+          </div>
+      </section>
+      <div class="content is-large is-inline-flex mt-6 ml-5">
+        <h1 class="title is-2">Images</h1>
         <NewImage />
       </div>
       <div v-if="images.length > 0">

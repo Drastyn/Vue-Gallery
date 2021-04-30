@@ -3,7 +3,7 @@
     <div class="column is-one-quarter-desktop is-half-tablet" v-for="(image, index) in images" :key="index">
       <div class="card pointer"  @click="openModal(image.url)">
         <div class="card-image">
-          <figure class="image">
+          <figure class="image is-16by9">
             <img :src="image.url" :alt="image.name"/>
           </figure>
         </div>
@@ -26,6 +26,7 @@
       </div>
     </div>
   </div>
+  
 </template>
 <script>
 export default {

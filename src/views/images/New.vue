@@ -3,10 +3,10 @@
       <form @submit.prevent="newImage">
         <div class="columns">
             <div class="column">
-                <h3 class="title is-2">Nueva Imagen</h3>
+                <h3 class="title is-2">New Image</h3>
                 <div class="field">
                     <div class="control">
-                      <input class="input" type="text" v-model="name" placeholder="Nombre" required>
+                      <input class="input" type="text" v-model="name" placeholder="Name (4 to 30 characters)" required>
                     </div>
                 </div>
                 <div class="file has-name is-right is-fullwidth">
@@ -14,7 +14,7 @@
                         <input class="file-input" type="file" v-on:change="onChange">
                         <span class="file-cta">
                             <span class="file-label">
-                                Seleccionar imagen
+                                Select image
                             </span>
                             <span class="icon">
                                 <font-awesome-icon icon='file-image'/>
@@ -24,7 +24,7 @@
                             {{this.file.name}}          
                         </span>
                         <span class="file-name" v-else>
-                            Ninguna imagen seleccionada (formato jpg, jpeg o png)
+                            No image selected (format jpg, jpeg or png)
                         </span>
                     </label>
                 </div>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="buttons my-5">
                     <button class="button is-success">
-                        <span class="mt-1">Subir</span>
+                        <span class="mt-1">Upload</span>
                         <span class="icon">
                             <font-awesome-icon icon='upload'/>
                         </span>
@@ -50,7 +50,7 @@
           <span class="icon">
               <font-awesome-icon icon='arrow-left'/>
           </span>
-          <span>Volver al indice de imagenes</span>
+          <span>Back to the index of images</span>
       </router-link>
       <FlashMessage :position="'right bottom'"/>
   </div>
@@ -96,11 +96,11 @@ export default {
                 image.append('file', this.file);
                 this.$store.dispatch('images/postImage', image)
                 .then((response) => {
-                    this.displaySave('Imagen guardada con éxito');
+                    this.displaySave('Image saved with success');
                     this.$router.push({ name: 'show_image_path', params: { token: response.token } });
                 })
                 .catch(() => {
-                    this.displayError('Oops! ha ocurrido un problema, la acción que estabas realizando a sido abortada');
+                    this.displayError('Oops! a problem has occurred, the action you were taking has been aborted');
                     this.$router.push({ name: 'images_path' });
                 });
             } else {
