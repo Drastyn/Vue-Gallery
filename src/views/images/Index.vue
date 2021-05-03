@@ -18,7 +18,7 @@
         <ImagesComponent :images="images"/>
       </div>
       <div v-else>
-          <h1>Imagen(es) no encontrada(s)</h1>
+          <h1>Image(s) not found(s)</h1>
       </div>
       <Pagination :amount="images.length"/>
        <FlashMessage :position="'right bottom'"/>
