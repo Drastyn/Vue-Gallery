@@ -1,0 +1,42 @@
+<template>
+  <div id="dashboard">
+        <section class="hero is-small is-primary">
+          <div class="hero-body">
+              <div class="is-flex">
+                <h1 class="title is-1">Vue Gallery</h1> 
+                <button class="button is-danger" @click="logout" style="margin-left: auto;">
+                    <span class="icon">
+                      <font-awesome-icon icon="sign-out-alt"/>
+                    </span>
+                    <span>Salir</span>
+                </button>
+              </div>
+              <p class="subtitle">
+                A Practice Gallery With VueJS + Laravel 8
+              </p>
+          </div>
+      </section>
+      <router-view/>
+  </div>
+</template>
+
+<script>
+import { mapState } from 'vuex';
+export default {
+    name: 'dashboard',
+    computed: {
+        ...mapState('notifications', ['notification']),
+    },
+    methods: {
+        display(message) {
+            this.$store.dispatch('notifications/loginMessage', message);
+            this.flashMessage.show(this.notification);
+        },
+        logout() {
+            this.$store.dispatch('doLogOut');
+            this.$router.push({ name: 'login_path' });
+            this.display('You have successfully logged out');
+        }
+    }
+}
+</script>

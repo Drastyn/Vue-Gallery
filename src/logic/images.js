@@ -5,18 +5,18 @@ const petition = axios.create({
 });
 
 export default {
-    fetchImages(params) {
-        return petition.get(`images?pagina=${params.page}`)
+    fetchImages(params, headers) {
+        return petition.get(`images?pagina=${params.page}`, { headers: headers})
         .then(response => (response.data))
         .catch(error => console.log(error));
     },
-    get(token) {
-        return petition.get(`images/${token}`)
+    get(token, headers) {
+        return petition.get(`images/${token}`, { headers: headers })
         .then(response => (response.data))
         .catch(error => console.log(error));
     },
-    post(image) {
-        return petition.post(`upload`, image)
+    post(image, headers) {
+        return petition.post(`upload`, image, { headers: headers })
         .then(response => (response.data))
         .catch(error => console.log(error));
     },

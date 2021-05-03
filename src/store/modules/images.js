@@ -7,6 +7,13 @@ const images = {
         image: {},
     },
     mutations: {
+        setHeaders(state, rootState) {
+            state.headers = {
+                "Content-Type": "application/json",
+                "Accpet": "application/json",
+                "Authorization": rootState.token,
+            };
+        },
         setImages(state, images) {
             state.images = images;
         },
@@ -21,18 +28,21 @@ const images = {
         },
     },
     actions: {
-        getImages({commit}, params) {
+        getImages({commit, rootState, state}, params) {
+            commit('setHeaders', rootState);
             return new Promise((resolve, reject) => {
-                ImagesLogic.fetchImages(params)
+                ImagesLogic.fetchImages(params, state.headers)
                 .then(response => {
                     commit('setImages', response.data);
+                    resolve(response);
                 })
                 .catch(error => reject(error));
             })
         },
-        getImage({commit}, token) {
+        getImage({commit, rootState, state}, token) {
+            commit('setHeaders', rootState);
             return new Promise((resolve, reject) => {
-                ImagesLogic.get(token)
+                ImagesLogic.get(token, state.headers)
                 .then(response => {
                     commit('setImage', response);
                     resolve(response);
@@ -40,9 +50,10 @@ const images = {
                 .catch(error => reject(error));
             })
         },
-        postImage({commit}, image) {
+        postImage({commit, rootState, state}, image) {
+            commit('setHeaders', rootState);
             return new Promise((resolve, reject) => {
-                ImagesLogic.post(image)
+                ImagesLogic.post(image, state.headers)
                 .then(response => {
                     commit('setImage', response);
                     resolve(response);

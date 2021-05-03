@@ -12,6 +12,13 @@ const notifications = {
         },
     },
     actions: {
+        loginMessage({commit}, message) {
+            commit('setNotification', {
+                title: message,
+                contentClass: 'flash-message-text',
+                icon: '/logo.png',
+            })
+        },
         successMessage({ commit }, message) {
             commit('setNotification', {
                 title: message,

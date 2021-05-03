@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="buttons my-5">
-                    <button class="button is-success">
+                    <button class="button is-success" style="margin-left: auto;">
                         <span class="mt-1">Upload</span>
                         <span class="icon">
                             <font-awesome-icon icon='upload'/>

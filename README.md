@@ -11,7 +11,8 @@ npm install
     NODE SASS,
     BULMA CSS,
     VUE-FLASH-MESSAGES,
-    FONTAWESOME
+    FONTAWESOME,
+    VUEX-PERSISTEDSTATE,
 )
 
 ```
