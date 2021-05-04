@@ -12,7 +12,6 @@
         </span>
         <span>Back to the index of images</span>
       </router-link>
-      <FlashMessage :position="'right bottom'"/>
   </div>
 </template>
 
