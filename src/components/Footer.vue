@@ -1,5 +1,5 @@
 <template>
-<footer id="footer" class="footer fix-footer">
+<footer id="gallery-footer" class="footer fix-footer">
   <div class="content has-text-centered">
     <p class="subtitle">
       A Practice Gallery With VueJS + Laravel 8.
@@ -17,6 +17,6 @@
 
 <script>
 export default {
-    name: 'footer',
+    name: 'gallery-footer',
 }
 </script>

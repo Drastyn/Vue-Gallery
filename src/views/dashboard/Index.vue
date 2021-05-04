@@ -1,32 +1,31 @@
 <template>
   <div id="dashboard">
-        <header class="hero is-small is-primary">
-          <div class="hero-body">
-              <div class="is-flex">
-                <h1 class="title is-1">Vue Gallery</h1> 
-                <button class="button is-danger" @click="logout" style="margin-left: auto;">
-                    <span class="icon">
-                      <font-awesome-icon :icon="['fas', 'sign-out-alt']"/>
-                    </span>
-                    <span>Salir</span>
-                </button>
-              </div>
+    <header class="hero is-small is-primary">
+      <div class="hero-body">
+          <div class="is-flex">
+            <h1 class="title is-1">Vue Gallery</h1> 
+            <button class="button is-danger" @click="logout" style="margin-left: auto;">
+                <span class="icon">
+                  <font-awesome-icon :icon="['fas', 'sign-out-alt']"/>
+                </span>
+                <span>Exit</span>
+            </button>
           </div>
-      </header>
-      <router-view/>
-      <div>
-        <Footer />
       </div>
+    </header>
+    <router-view/>
+    <GalleryFooter />
+    <FlashMessage :position="'right bottom'"/>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex';
-import Footer from '@/components/Footer';
+import GalleryFooter from '@/components/Footer';
 export default {
     name: 'dashboard',
     components: {
-      Footer,
+      GalleryFooter,
     },
     computed: {
         ...mapState('notifications', ['notification']),

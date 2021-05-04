@@ -11,7 +11,6 @@
           <h1 class="title is-3">Image(s) not found(s)</h1>
       </div>
       <Pagination :amount="images.length"/>
-       <FlashMessage :position="'right bottom'"/>
   </div>
 </template>
 
