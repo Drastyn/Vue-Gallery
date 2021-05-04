@@ -1,29 +1,33 @@
 <template>
   <div id="dashboard">
-        <section class="hero is-small is-primary">
+        <header class="hero is-small is-primary">
           <div class="hero-body">
               <div class="is-flex">
                 <h1 class="title is-1">Vue Gallery</h1> 
                 <button class="button is-danger" @click="logout" style="margin-left: auto;">
                     <span class="icon">
-                      <font-awesome-icon icon="sign-out-alt"/>
+                      <font-awesome-icon :icon="['fas', 'sign-out-alt']"/>
                     </span>
                     <span>Salir</span>
                 </button>
               </div>
-              <p class="subtitle">
-                A Practice Gallery With VueJS + Laravel 8
-              </p>
           </div>
-      </section>
+      </header>
       <router-view/>
+      <div>
+        <Footer />
+      </div>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex';
+import Footer from '@/components/Footer';
 export default {
     name: 'dashboard',
+    components: {
+      Footer,
+    },
     computed: {
         ...mapState('notifications', ['notification']),
     },
