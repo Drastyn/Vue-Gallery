@@ -1,8 +1,8 @@
 @import '~bulma';
 
-.pointer {
-    cursor: pointer;
-}
+.pointer { cursor: pointer; }
+
+.credits { display: none; }
 
 .flash-message-text { margin-top: 2.5rem; }
 
@@ -35,40 +35,38 @@
 .preview {
     display: flex;
     justify-content: center;
-    &-image {
-        border-radius: 0.25rem;
-    }
+    &-image { border-radius: 0.25rem; }
 }
 
 /* Tablet */
 @media screen and (min-width: 768px) {
     .modal {
-        &-center {
-            margin: 25% auto;
-        }
+        &-center { margin: 25% auto; }
     }
 }
 
 @media screen and (min-width: 1024px) {
     .modal {
-        &-center {
-            margin: 15% auto;
-        }
+        &-center { margin: 15% auto; }
+    }
+    .credits { 
+        display: block;
+        &-link{ transition: .8s; }
+        &-link:hover { color: #3e73dc !important; }
     }
     .fix-footer {
-        position: absolute;
+        display: none;
+        /*position: absolute;
         width: 100%;
         bottom: 0;
-        overflow:hidden;
+        overflow:hidden;*/
     }
 }
 
 /* Escritorio */
 @media screen and (min-width: 1400px) {
     .modal {
-        &-center {
-            margin: 5% auto;
-        }
+        &-center { margin: 5% auto; }
         &-content {
             width: 1280px;  
             height: 720px;

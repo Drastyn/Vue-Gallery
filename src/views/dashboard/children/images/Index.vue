@@ -1,6 +1,6 @@
 <template>
   <div id="images-index">
-      <div class="content is-large is-inline-flex mt-6 ml-5">
+      <div class="content is-large is-inline-flex mt-5 ml-5">
         <h1 class="title is-2">Images</h1>
         <NewImage />
       </div>

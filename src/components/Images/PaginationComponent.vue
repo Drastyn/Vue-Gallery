@@ -1,5 +1,5 @@
 <template>
-  <div id="pagination" class="my-6 mx-5">
+  <div id="pagination" class="my-4 mx-5">
       <nav class="pagination" role="navigation" aria-label="pagination">
         <a v-if="page >= 2" @click="previousPage()" class="pagination-previous nav-button page-button">
           <span class="icon mr-2">

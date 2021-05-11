@@ -11,6 +11,9 @@
                 <span>Exit</span>
             </button>
           </div>
+          <div class="credits">
+            <Credits/>
+          </div>
       </div>
     </header>
     <router-view/>
@@ -22,10 +25,12 @@
 <script>
 import { mapState } from 'vuex';
 import GalleryFooter from '@/components/Footer';
+import Credits from '@/components/Credits';
 export default {
     name: 'dashboard',
     components: {
       GalleryFooter,
+      Credits,
     },
     computed: {
         ...mapState('notifications', ['notification']),
