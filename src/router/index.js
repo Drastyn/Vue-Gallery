@@ -18,11 +18,11 @@ const router = new VueRouter({
       path: '/',
       component: DashboardIndex, meta: { requiresAuth: true}, 
       children: [
-        {path: '/imagenes', name: 'images_path', component: ImagesIndex, },
-        {path: '/imagenes/nueva', name: 'new_image_path', component: ImagesNew, },
-        {path: '/imagenes/:token', name: 'show_image_path', component: ImagesShow, },
+        {path: '/images', name: 'images_path', component: ImagesIndex, },
+        {path: '/images/new', name: 'new_image_path', component: ImagesNew, },
+        {path: '/images/:token', name: 'show_image_path', component: ImagesShow, },
       ] 
-    }
+    },
   ],
 });
 

@@ -45,7 +45,7 @@ const store = new Vuex.Store({
     doLogOut({ commit }) {
       commit('removeToken');
       commit('setHeaders');
-    }
+    },
   },
   modules: {
     images: images,

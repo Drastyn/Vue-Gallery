@@ -44,7 +44,7 @@ export default {
             this.$store.dispatch('doLogOut');
             this.$router.push({ name: 'login_path' });
             this.display('You have successfully logged out');
-        }
-    }
+        },
+    },
 }
 </script>
