@@ -2,6 +2,7 @@
   <div id="images-show">
       <div class="my-6  has-text-centered" >
         <h1 class="title is-2">{{image.name}}</h1>
+        <h2 class="title is-4">Uploaded by @{{image.user_name}}</h2>
         <figure class="preview">
             <img class="preview-image" :src="image.url" alt="image" width="768" height="216">
         </figure>  
