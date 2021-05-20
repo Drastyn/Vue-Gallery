@@ -55,6 +55,9 @@ export default {
   computed: {
     ...mapState('notifications', ['notification']),
   },
+  destroyed() {
+    this.$store.dispatch('notifications/cleanNotification');
+  },
   methods: {
     display(message) { 
       this.$store.dispatch('notifications/loginMessage', message);

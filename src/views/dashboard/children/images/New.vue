@@ -70,6 +70,9 @@ export default {
         ...mapState('forms', ['errors']),
         ...mapState('notifications', ['notification']),        
     },
+    destroyed() {
+        this.$store.dispatch('notifications/cleanNotification');
+    },
     methods: {
         onChange(e) {
             this.file = e.target.files[0] && e.target.files[0].type.includes('image/') ? e.target.files[0] : '';
